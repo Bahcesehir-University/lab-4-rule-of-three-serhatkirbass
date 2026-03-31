@@ -116,7 +116,7 @@ public:
         //    1. Increment g_assignmentCount
         g_assignmentCount++;
         //    2. Check for self-assignment (if this == &other)
-        if (this != &other) {
+        if (this == &other) return *this;
             //    3. Delete old m_data (delete[])
             delete[] m_data;
             //    4. Copy m_length from other
